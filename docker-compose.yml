@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  boost-shared-mem-parent:
+    image: aidandj/boost-shared-mem
+    container_name: "python-boost-shared-mem-parent"
+    command: "./test"
+    # command: "tail -f /dev/null"
+    ipc: "shareable"
+  boost-shared-mem-child-python:
+    build: .
+    container_name: "python-boost-shared-mem-child-python"
+    command: "python3 get_shared_mem_number.py"
+    # command: "tail -f /dev/null"
+    ipc: "container:python-boost-shared-mem-parent"
+    depends_on: 
+      - "boost-shared-mem-parent"
