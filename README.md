@@ -7,3 +7,7 @@ This container will use a build container to create a runtime container that wil
 * Uses a parent container based off of my other shared mem project
 * Implements a Boost python module that reads from the shared memory.
 * Exits if the shared value isn't correct.
+
+## Sources
+
+* https://www.boost.org/doc/libs/1_55_0/doc/html/interprocess/quick_guide.html
